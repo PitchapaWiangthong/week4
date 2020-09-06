@@ -16,7 +16,7 @@ int isPrime(int x)
 	return a;
 }
 
-int main()
+int main3()
 {
 	scanf_s("%d", &x);
 	isPrime(x);

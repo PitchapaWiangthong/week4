@@ -4,7 +4,7 @@ int main()
     int num1 = 0, num2 = 0, ans;
     int sum = 0;
     char numStr[1000];
-    scanf_s("%s", numStr);
+    scanf_s("%s", numStr,1000);
 
     int i = 0;
     while (numStr[i] != '\0')

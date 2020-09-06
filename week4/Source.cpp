@@ -1,5 +1,5 @@
 #include<stdio.h>
-int main()
+int main2()
 {
     char letter[10000];
     int i = 0, n = 0, count = 0;

@@ -1,31 +1,36 @@
 #include<stdio.h>
 int main()
 {
-	long long num, sum1 = 0, sum2 = 0, sum3 = 0;
-	scanf_s("%lld", &num);
-	while (num % 10 != 0)
-	{
-		sum1 += num % 10;
-		num = num / 10;
-	}
-	printf("%lld\n", sum1);
-	if (sum1 % 10 == 0)
-	{
-		sum2 = sum1 / 10;
-	}
-	else
-	{
-		while (sum1 % 10 != 0)
-		{
-			sum2 += sum1 % 10;
-			sum1 = sum1 / 10;
+    int num1 = 0, num2 = 0, ans;
+    int sum = 0;
+    char numStr[1000];
+    scanf_s("%s", numStr);
 
-			if (sum1 % 10 == 0)
-			{
-				sum2 += (sum1 / 10);
-			}
-		}
-	}
-	printf("%lld\n", sum2);
-	return 0;
+    int i = 0;
+    while (numStr[i] != '\0')
+    {
+        num1 += numStr[i] - 48;
+        i++;
+    }
+    printf("%d\n", num1);
+
+    while (1)
+    {
+        while (num1 > 9)
+        {
+            num2 += num1 % 10;
+            num1 /= 10;
+        }
+        num2 += num1;
+
+        num1 = num2;
+        printf("%d\n", num2);
+
+        if (num2 < 10) break;
+        else {
+            num1 = num2;
+            num2 = 0;
+        }
+    }
+    return 0;
 }
